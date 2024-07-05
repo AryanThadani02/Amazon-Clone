@@ -38,7 +38,7 @@ const Header = ({ name, setName, query, setQuery, setUseremail, call }) => {
         dispatch({ type: CLEAR_CART });
       })
       .catch((error) => {
-        toast(error, {
+        toast(error.message, {
           position: "bottom-right",
           autoClose: 1800,
           closeOnClick: true,
@@ -55,142 +55,104 @@ const Header = ({ name, setName, query, setQuery, setUseremail, call }) => {
   };
 
   return (
-    <div className="text-white">
-      <div className="sticky top-0 left-0 h-[70px] lg:h-[65px] bg-[rgb(19,25,33)] px-4 py-2 flex justify-evenly items-center overflow-hidden">
-        <Link className="h-[90%] border hover:cursor-pointer hover:border-white border-[rgb(19,25,33)] flex items-center justify-center" to="/">
-          <img
-            src={logo}
-            className="px-2 py-[2px] h-[70%] md:h-[75%] md:flex lg:h-[80%] xl:h-[85%] rounded-sm"
-            alt="amazon logo"
-          />
-          <span className="text-white font-semibold pb-2 pr-1 hidden md:flex">.in</span>
+    <header className="bg-[rgb(19,25,33)] text-white md:sticky top-0 z-50">
+      <div className="flex items-center justify-between p-2">
+        {/* Logo */}
+        <Link to="/" className="flex items-center space-x-2">
+          <img src={logo} alt="Amazon Logo" className="h-10" />
+          <span className="hidden md:inline font-semibold">.in</span>
         </Link>
 
-        <span className="hidden lg:flex items-center border hover:border-white border-[rgb(19,25,33)] rounded-sm xl:px-2 hover:cursor-pointer ml-2">
-          <span className="text-[rgb(220,220,220)] flex flex-col text-[12px]">
-            <span className="pl-1 xl:pl-3x text-[10px]">Delivering to Jodhpur,<span className="hidden lg:flex"> 342008</span></span>
-            <span className="flex text-[10px] xl:text-[14px] text-[rgb(240,240,240)] font-bold">
-              <LuMapPin className="text-white text-[12px] xl:text-xl" />
-              Update location
-            </span>
-          </span>
-        </span>
+        {/* Location (only visible on large screens) */}
+        <div className="hidden lg:flex items-center space-x-2">
+          <LuMapPin className="text-white" />
+          <div className="text-xs leading-tight">
+            <p>Deliver to</p>
+            <p className="font-bold">Jodhpur 342008</p>
+          </div>
+        </div>
 
-        <SearchBar
-          query={query}
-          setQuery={setQuery}
-          search={search}
-        />
+        {/* Search Bar */}
+        <SearchBar query={query} setQuery={setQuery} search={search} />
 
-        <span className="h-[90%] flex items-center justify-center border hover:border-white border-[rgb(19,25,33)] rounded-sm px-2 pb-1 hover:cursor-pointer ml-2">
+        {/* Language & Sign In / Logout */}
+        <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2">
+            <img src={india} alt="India Flag" className="h-5" />
+            <div className="flex items-center space-x-1">
+              <RiEnglishInput className="text-xl" />
+              <FaCaretDown />
+            </div>
+          </div>
+
           {name ? (
-            <span className="font-semibold" onClick={handleSignOut}>Logout</span>
+            <button onClick={handleSignOut} className="text-sm font-semibold">Logout</button>
           ) : (
-            <>
-              <img src={india} alt="" className="h-[70%]" />
-              <span className="flex pb-[1px]">
-                <RiEnglishInput className="font-extrabold text-white" />
-                <FaCaretDown />
-              </span>
-            </>
+            <Link to="/signin" className="text-sm font-semibold">Sign In</Link>
           )}
-        </span>
+        </div>
 
-        <Link to="/signin">
-          <UserAccount user={user} />
-        </Link>
-
-        <span className="h-[90%] hidden xl:flex flex-col border hover:border-white border-[rgb(19,25,33)] rounded-sm px-2 hover:cursor-pointer ml-2">
-          <span className="text-[rgb(220,220,220)] text-[12px]">Returns</span>
-          <span className="text-[14px] text-[rgb(240,240,240)] font-bold">
-            & Orders
+        {/* User Account */}
+        <Link to="/signin" className="hidden lg:flex flex-col items-center">
+          <span className="text-xs">Hello, {user?.displayName || "sign in"}</span>
+          <span className="font-bold flex items-center">
+            Account & Lists
+            <FaCaretDown className="ml-1" />
           </span>
-        </span>
+        </Link>
 
-        <Link to="/cart">
-          <CartIcon cartItems={cartItems} />
+        {/* Orders */}
+        <Link to="/orders" className="hidden xl:flex flex-col items-center">
+          <span className="text-xs">Returns</span>
+          <span className="font-bold">Orders</span>
+        </Link>
+
+        {/* Cart */}
+        <Link to="/cart" className="relative flex items-center">
+          <FiShoppingCart className="text-2xl" />
+          {cartItems.length > 0 && (
+            <span className="absolute top-[-17px] right-[-5px] h-5 w-5 bg-green-600 text-white text-xs rounded-full flex items-center justify-center">
+              {cartItems.length}
+            </span>
+          )}
         </Link>
       </div>
 
-      {/* mobile view */}
-      <div className=" bg-[rgb(19,25,33)] px-4 pb-2">
-        <SearchBar
-          query={query}
-          setQuery={setQuery}
-          search={search}
-          isMobile
-        />
+      {/* Mobile Search Bar */}
+      <div className="md:hidden p-2">
+        <SearchBar query={query} setQuery={setQuery} search={search} isMobile />
       </div>
 
-      {/* second nav */}
+      {/* Second Navigation */}
       <SecondNav />
-    </div>
+    </header>
   );
 };
 
 const SearchBar = ({ query, setQuery, search, isMobile }) => (
-  <div
-    className={`${
-      isMobile ? "md:hidden" : "hidden md:flex"
-    } items-center w-full lg:w-[40%] xl:w-[50%] border-4 border-[rgb(19,25,33)] focus:border-yellow-400 mx-2 rounded-lg overflow-hidden`}
-  >
-    <select className="h-10 border-none w-[10px] xl:w-[140px] 2xl:w-[160px] text-black px-2 bg-gray-100">
+  <div className={`flex items-center border-4 border-yellow-400 rounded-lg ${isMobile ? "w-full" : "hidden md:flex w-full lg:w-1/2 xl:w-1/2"} md:mx-2 mx-auto `}>
+    <select className="h-10 text-black bg-gray-100 px-2 w-20 sm:w-auto">
       {amazonCategories.map((category, index) => (
-        <option
-          key={index}
-          value={category.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-")}
-        >
+        <option key={index} value={category.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-")}>
           {category}
         </option>
       ))}
     </select>
     <input
       type="text"
-      className="flex-grow text-black h-10 border-none px-2 outline-none"
+      className="flex-grow h-10 px-2 text-black outline-none w-36 sm:w-full"
       placeholder="Search"
-      onChange={(e) => setQuery(e.target.value)}
       value={query}
+      onChange={(e) => setQuery(e.target.value)}
     />
-    <button className="h-10 px-4 bg-yellow-400 text-gray-800" onClick={search}>
-      <IoSearch className="text-white font-bold text-2xl" />
+    <button onClick={search} className="h-10 px-4 bg-yellow-400">
+      <IoSearch className="text-2xl text-white" />
     </button>
   </div>
 );
 
-const UserAccount = ({ user }) => (
-  <span className="h-[90%] flex flex-col border hover:border-white border-[rgb(19,25,33)] rounded-sm px-1 md:px-2 hover:cursor-pointer">
-    <span className="text-[rgb(220,220,220)] text-[12px] flex ">
-      Hello,
-      <span className="flex">
-        {user?.displayName ? user?.displayName : "sign in"}
-      </span>
-    </span>
-    <span className="text-[14px] text-[rgb(240,240,240)] font-bold flex items-end">
-      Account<span className="xl:flex hidden"> & Lists </span>
-      <FaCaretDown className="mb-1" />
-    </span>
-  </span>
-);
-
-// eslint-disable-next-line react/prop-types
-const CartIcon = ({ cartItems }) => (
-  <span className="h-[90%] flex items-end border hover:border-white border-[rgb(19,25,33)] rounded-sm px-2 hover:cursor-pointer ml-2">
-    <span className="text-[rgb(220,220,220)] relative text-[35px]">
-      <FiShoppingCart />
-      <span
-        className={`${
-          // eslint-disable-next-line react/prop-types
-          cartItems.length > 0 ? "" : "hidden"
-        } text-[14px] text-white bg-green-600 font-bold w-[25px] h-[25px] rounded-full flex items-center justify-center absolute -right-3 -top-2 text-[rgb(240,240,240)] font-bold`}
-      >
-        {cartItems.length}
-      </span>
-    </span>
-  </span>
-);
-
 const SecondNav = () => (
-  <div className="bg-[rgb(35,47,62)] text-white h-[40px] px-5 sm:px-5 md:px-5 lg:px-2 flex items-center justify-evenly lg:justify-center overflow-x-auto scrollbar-hide">
+  <nav className="bg-[rgb(35,47,62)] text-white flex items-center justify-evenly overflow-x-auto py-2">
     {[
       { label: "All Products", link: "/product" },
       { label: "Laptops", link: "/product/laptops" },
@@ -207,15 +169,11 @@ const SecondNav = () => (
       { label: "Handmade", link: "/product/handmade" },
       { label: "Games", link: "/product/videogame" },
     ].map(({ label, link }, index) => (
-      <Link
-        key={index}
-        to={link}
-        className="h-[90%] min-w-fit px-2 text-[15px] border border-[rgb(35,47,62)] hover:border-white flex items-center gap-1 hover:cursor-pointer"
-      >
+      <Link key={index} to={link} className="px-2 text-sm hover:border-white border-transparent border-b-2">
         {label}
       </Link>
     ))}
-  </div>
+  </nav>
 );
 
 export default Header;

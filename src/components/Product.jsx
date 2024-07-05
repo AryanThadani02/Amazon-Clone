@@ -127,26 +127,23 @@ function Product() {
   return (
     <div className="flex flex-col xl:flex-row overflow-x-auto">
       <Sidebar onSortChange={handleSortChange} />
-      <div className="pl-20 flex flex-col gap-5 py-10">
+      <div className="flex flex-col items-center gap-5 py-10 w-full">
         {currentProducts.map((product) => (
-          // md view
-          <div key={product.asin} className="hidden md:flex items-center">
-            <div className="xl:w-[280px] xl:min-w-[279px] xl:h-[303px] flex justify-center items-center pt-7 relative bg-[rgb(247,247,247)]">
+          <div key={product.asin} className="flex flex-col md:flex-row items-center w-full md:w-4/5 xl:w-[800px] bg-[rgb(247,247,247)] p-5 rounded-lg shadow-lg">
+            <div className="flex-shrink-0 w-full md:w-1/3 xl:w-[280px] flex justify-center items-center pt-7 relative">
               <img
                 src={product.product_photo}
                 alt="product image"
-                className="w-[98%] h-1/2 min-h-1/2 min-w-[177px] xl:h-[217px] xl:w-[177px] duration-500 hover:scale-105"
+                className="w-[98%] h-[50%] min-h-[50%] min-w-[177px] xl:h-[217px] xl:w-[177px] duration-500 hover:scale-105 mb-5"
               />
               <span
-                className={` ${
-                  !product.is_amazon_choice ? "hidden" : ""
-                } text-white bg-[rgb(0,47,54)] absolute top-0 left-0 px-3 text-md`}
+                className={` ${!product.is_amazon_choice ? "hidden" : ""} text-white bg-[rgb(0,47,54)] absolute top-0 left-0 px-3 text-md`}
               >
                 Amazon's <span className="text-orange-400"><i>Choice</i></span>
               </span>
             </div>
-            <div className="flex flex-col px-6 gap-2">
-              <h1 className="font-bold w-[600px]">{product.product_title}</h1>
+            <div className="flex flex-col justify-between px-6 gap-2 w-full md:w-2/3">
+              <h1 className="font-bold w-full">{product.product_title}</h1>
               <span className="flex items-center gap-2">
                 <ReactStars
                   count={5}
@@ -171,7 +168,7 @@ function Product() {
               <span className={`${product.is_prime ? "" : "hidden"} `}>
                 <img width="50px" height="15px" src={isPrime} alt="" />
               </span>
-              <div className="h-[80px] pt-5">
+              <div className="pt-5 flex justify-between items-center w-full">
                 {
                   product?.addedtocart 
                   ? (
@@ -189,9 +186,6 @@ function Product() {
               </div>
             </div>
           </div>
-
-
-       
         ))}
         <div className="flex justify-center mt-4">
           <button 

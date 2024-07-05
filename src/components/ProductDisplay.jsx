@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect } from "react";
 import axios from "axios";
 import { ADD_TO_CART } from "../redux/reducer";
