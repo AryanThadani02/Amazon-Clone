@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+/* eslint-disable react/prop-types */
+
+import  { useState } from 'react';
 
 const Sidebar = ({ onSortChange }) => {
   const [sortOption, setSortOption] = useState('');
@@ -10,7 +12,7 @@ const Sidebar = ({ onSortChange }) => {
   };
 
   return (
-    <div className='w-full h:10 xl:h-full xl:w-48 p-5 bg-white border-r border-gray-300'>
+    <div className='w-full h:10 xl:h-full xl:w-48 p-5 bg-white border-gray-300'>
       <h2 className="font-bold text-xl">Sort Options</h2>
       <select value={sortOption} onChange={handleSortChange} className='border-black border rounded-lg outline-none w-48 p-2.5 mt-2.5' >
         <option value="featured">Featured</option>

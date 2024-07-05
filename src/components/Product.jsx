@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { productObject, allproducts } from "../components/data.js";
 import isPrime from "../assets/HomeCarousel/isPrime.png";
