@@ -131,8 +131,8 @@ function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-8 border-t border-gray-700 pt-8">
-          <div className="flex justify-center">
+        <div className="mt-8 border-t border-gray-700 pt-8 flex flex-col items-center justify-center">
+          <div className="flex flex-wrap justify-center gap-4 mb-4">
             <a href="#" className="text-gray-400 hover:text-white mx-2">
               Conditions of Use & Sale
             </a>
@@ -142,10 +142,10 @@ function Footer() {
             <a href="#" className="text-gray-400 hover:text-white mx-2">
               Interest-Based Ads
             </a>
-            <span className="text-gray-400 mx-2">
-              © 1996-2024, Amazon.com, Inc. or its affiliates
-            </span>
           </div>
+          <span className="text-gray-400 mx-2 text-center">
+            © 1996-2024, Amazon.com, Inc. or its affiliates
+          </span>
         </div>
       </div>
       
