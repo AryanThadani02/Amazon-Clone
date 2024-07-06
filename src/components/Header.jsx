@@ -103,7 +103,7 @@ const Header = ({ name, setName, query, setQuery, setUseremail, call }) => {
         </Link>
 
         {/* Orders */}
-        <Link to="/orders" className="hidden xl:flex flex-col items-center">
+        <Link to="/" className="hidden xl:flex flex-col items-center">
           <span className="text-xs">Returns</span>
           <span className="font-bold">Orders</span>
         </Link>
