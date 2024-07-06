@@ -9,6 +9,7 @@ import { RiEnglishInput } from "react-icons/ri";
 import { FiShoppingCart } from "react-icons/fi";
 import { IoSearch } from "react-icons/io5";
 import { FaCaretDown } from "react-icons/fa";
+import { IoChatbubbleEllipses } from "react-icons/io5"; // Add this line
 import logo from "../assets/logo.png";
 import india from "../assets/india.png";
 import { amazonCategories } from "./data";
@@ -116,6 +117,11 @@ const Header = ({ name, setName, query, setQuery, setUseremail, call }) => {
             </span>
           )}
         </Link>
+
+        {/* Chatbot Icon */}
+        <Link to="/chatbot" className="flex items-center">
+          <IoChatbubbleEllipses className="text-2xl text-white ml-4" />
+        </Link>
       </div>
 
       {/* Mobile Search Bar */}
@@ -168,6 +174,7 @@ const SecondNav = () => (
       { label: "Grocery", link: "/product/groceryandgourmetfood" },
       { label: "Handmade", link: "/product/handmade" },
       { label: "Games", link: "/product/videogame" },
+      { label: "Chatbot", link: "/chatbot" },  // Add this line
     ].map(({ label, link }, index) => (
       <Link key={index} to={link} className="px-2 text-sm hover:border-white border-transparent border-b-2">
         {label}
