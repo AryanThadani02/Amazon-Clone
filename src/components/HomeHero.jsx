@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 // import { FaAngleRight } from "react-icons/fa";
 // import box1_1 from '../assets/HomeCarousel/box1-1.jpg'

@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 // chatbotConfig.js
 import { createChatBotMessage } from "react-chatbot-kit";
 import ActionProvider from "./ActionProvider";
