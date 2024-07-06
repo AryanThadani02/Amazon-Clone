@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { ADD_TO_CART } from "../redux/reducer";
 import ReactStars from "react-rating-stars-component";
@@ -8,6 +8,7 @@ import isPrime from "../assets/HomeCarousel/isPrime.png";
 import { useDispatch } from "react-redux";
 import { BallTriangle } from "react-loader-spinner";
 import { toast } from "react-toastify";
+import Sidebar from "./Sidebar";
 
 function ProductDisplay() {
   const [
@@ -22,18 +23,49 @@ function ProductDisplay() {
   ] = useOutletContext();
   const dispatch = useDispatch();
 
+  const [sortedProducts, setSortedProducts] = useState([]);
+  
+  useEffect(() => {
+    setSortedProducts([...searchresult]);
+  }, [searchresult]);
+
+  const handleSortChange = (sortOption) => {
+    let sortedArray = [...sortedProducts];
+    switch (sortOption) {
+      case 'priceLowToHigh':
+        sortedArray.sort((a, b) => {
+          const priceA = a.product_price ? parseFloat(a.product_price.replace(/[^0-9.-]+/g, "")) : 0;
+          const priceB = b.product_price ? parseFloat(b.product_price.replace(/[^0-9.-]+/g, "")) : 0;
+          return priceA - priceB;
+        });
+        break;
+      case 'priceHighToLow':
+        sortedArray.sort((a, b) => {
+          const priceA = a.product_price ? parseFloat(a.product_price.replace(/[^0-9.-]+/g, "")) : 0;
+          const priceB = b.product_price ? parseFloat(b.product_price.replace(/[^0-9.-]+/g, "")) : 0;
+          return priceB - priceA;
+        });
+        break;
+      default:
+        sortedArray = [...searchresult];
+        break;
+    }
+    setSortedProducts(sortedArray);
+  };
+
   const handleAddToCart = (product) => {
     dispatch(ADD_TO_CART(product));
     toast.success("Product Added to cart!", {
       position: "bottom-right",
       theme: "colored",
-    })
+    });
     console.log(product);
   };
 
   return (
     <div className="px-4 md:px-10 lg:px-20">
-      {searchresult?.length == 0 ? (
+      <Sidebar onSortChange={handleSortChange} />
+      {sortedProducts?.length === 0 ? (
         <div className="text-center text-black text-2xl h-[50vh] flex justify-center items-center">
           <BallTriangle
             height={100}
@@ -48,7 +80,7 @@ function ProductDisplay() {
         </div>
       ) : (
         <div className="flex flex-col gap-5 py-10">
-          {searchresult?.map((product) => (
+          {sortedProducts?.map((product) => (
             <div key={product.asin} className="flex flex-col md:flex-row items-center bg-[rgb(247,247,247)] p-5 rounded-lg shadow-lg">
               <div className="w-full md:w-[280px] flex justify-center relative mb-4 md:mb-0">
                 <img
@@ -57,14 +89,9 @@ function ProductDisplay() {
                   className="h-[217px] w-[177px] object-contain"
                 />
                 <span
-                  className={` ${
-                    !product.is_amazon_choice ? "hidden" : ""
-                  } text-white bg-[rgb(0,47,54)] absolute top-0 left-0 px-3 text-md`}
+                  className={` ${!product.is_amazon_choice ? "hidden" : ""} text-white bg-[rgb(0,47,54)] absolute top-0 left-0 px-3 text-md`}
                 >
-                  Amazon&apos;s{" "}
-                  <span className="text-orange-400">
-                    <i>Choice</i>
-                  </span>
+                  Amazon&apos;s <span className="text-orange-400"><i>Choice</i></span>
                 </span>
               </div>
               <div className="flex flex-col px-6 gap-2 w-full md:w-auto">
@@ -89,7 +116,7 @@ function ProductDisplay() {
                   {product.sales_volume}
                 </span>
                 <span className="flex gap-2 items-center">
-                  <span className="text-xl ">{product.product_price}</span>
+                  <span className="text-xl">{product.product_price}</span>
                   <span className="text-[rgb(86,89,89)] text-sm">
                     M.R.P: <s>{product.product_original_price}</s>
                   </span>
