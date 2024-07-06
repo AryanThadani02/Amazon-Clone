@@ -30,10 +30,9 @@ function ProductDisplay() {
     })
     console.log(product);
   };
-  console.log(Array.isArray(searchresult), "isArray");
-  console.log(searchresult);
+
   return (
-    <div>
+    <div className="px-4 md:px-10 lg:px-20">
       {searchresult?.length == 0 ? (
         <div className="text-center text-black text-2xl h-[50vh] flex justify-center items-center">
           <BallTriangle
@@ -48,17 +47,15 @@ function ProductDisplay() {
           />
         </div>
       ) : (
-        <div className=" pl-64 flex flex-col gap-5 py-10">
+        <div className="flex flex-col gap-5 py-10">
           {searchresult?.map((product) => (
-            <div key={product.asin} className="flex items-center">
-              <div className="w-[280px] min-w-[279px] h-[303px] flex justify-center pt-7 relative bg-[rgb(247,247,247)]">
-                {/* <a href={product.product_url}> */}
+            <div key={product.asin} className="flex flex-col md:flex-row items-center bg-[rgb(247,247,247)] p-5 rounded-lg shadow-lg">
+              <div className="w-full md:w-[280px] flex justify-center relative mb-4 md:mb-0">
                 <img
                   src={product.product_photo}
                   alt="product image"
-                  className="h-[217px] w-[177px]"
+                  className="h-[217px] w-[177px] object-contain"
                 />
-                {/* </a> */}
                 <span
                   className={` ${
                     !product.is_amazon_choice ? "hidden" : ""
@@ -70,9 +67,8 @@ function ProductDisplay() {
                   </span>
                 </span>
               </div>
-              {/* product detail */}
-              <div className="flex flex-col px-6 gap-2">
-                <h1 className="font-bold w-[600px]">{product.product_title}</h1>
+              <div className="flex flex-col px-6 gap-2 w-full md:w-auto">
+                <h1 className="font-bold text-lg md:text-xl">{product.product_title}</h1>
                 <span className="flex items-center gap-2">
                   <ReactStars
                     count={5}
@@ -92,11 +88,10 @@ function ProductDisplay() {
                 <span className="text-[rgb(86,89,89)] text-md">
                   {product.sales_volume}
                 </span>
-
                 <span className="flex gap-2 items-center">
                   <span className="text-xl ">{product.product_price}</span>
                   <span className="text-[rgb(86,89,89)] text-sm">
-                    M.R.P: <s className="">{product.product_original_price}</s>
+                    M.R.P: <s>{product.product_original_price}</s>
                   </span>
                 </span>
                 <span className={`${product.is_prime ? "" : "hidden"} `}>

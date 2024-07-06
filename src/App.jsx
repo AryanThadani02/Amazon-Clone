@@ -31,7 +31,7 @@ function App() {
         product_condition: 'ALL'
       },
       headers: {
-        'x-rapidapi-key': 'b8bb314eb8msh5bcb832919161fdp12af72jsn4c6c655daa90',
+        'x-rapidapi-key': '67ee097292msh35f8764f93056a7p14c4cbjsn0e9096105a34',
         'x-rapidapi-host': 'real-time-amazon-data.p.rapidapi.com'
       }
     };
