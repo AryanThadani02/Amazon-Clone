@@ -174,7 +174,6 @@ const SecondNav = () => (
       { label: "Grocery", link: "/product/groceryandgourmetfood" },
       { label: "Handmade", link: "/product/handmade" },
       { label: "Games", link: "/product/videogame" },
-      { label: "Chatbot", link: "/chatbot" },  // Add this line
     ].map(({ label, link }, index) => (
       <Link key={index} to={link} className="px-2 text-sm hover:border-white border-transparent border-b-2">
         {label}
