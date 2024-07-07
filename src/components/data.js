@@ -1421,8 +1421,8 @@ export const allproducts = [
   {
     asin: "B0CHWV2WYK",
     product_title: "Apple iPhone 15 Pro Max (256 GB) - Black Titanium",
-    product_price: null,
-    product_original_price: null,
+    product_price: "₹1,00,000",
+    product_original_price: "₹1,00,000",
     currency: null,
     product_star_rating: "4.5",
     product_num_ratings: 285,
@@ -1430,7 +1430,7 @@ export const allproducts = [
     product_photo:
       "https://m.media-amazon.com/images/I/81Os1SDWpcL._AC_SX444_SY639_FMwebp_QL65_.jpg",
     product_num_offers: 1,
-    product_minimum_offer_price: null,
+    product_minimum_offer_price: "₹1,00,000",
     is_best_seller: false,
     is_amazon_choice: false,
     is_prime: false,
@@ -1627,8 +1627,8 @@ export const allproducts = [
     asin: "B0BY8L3RZ6",
     product_title:
       "OnePlus Nord CE 3 Lite 5G (Chromatic Gray, 8GB RAM, 256GB Storage)",
-    product_price: null,
-    product_original_price: null,
+    product_price: "₹19,999",
+    product_original_price: "₹19,999",
     currency: null,
     product_star_rating: "4.2",
     product_num_ratings: 46330,
@@ -1636,7 +1636,7 @@ export const allproducts = [
     product_photo:
       "https://m.media-amazon.com/images/I/61LB+d0vheL._AC_SX444_SY639_FMwebp_QL65_.jpg",
     product_num_offers: 1,
-    product_minimum_offer_price: null,
+    product_minimum_offer_price: "₹19,999",
     is_best_seller: false,
     is_amazon_choice: false,
     is_prime: false,
@@ -2166,8 +2166,8 @@ export const allproducts = [
     asin: "B0BZCSMP95",
     product_title:
       "Samsung Galaxy M14 5G (ICY Silver,4GB,128GB)|50MP Triple Cam|Segment&#x27;s Only 6000 mAh 5G SP|5nm Processor|2 Gen. OS Upgrade &amp; 4 Year Security Update|8GB RAM with RAM Plus|Android 13|Without Charger",
-    product_price: null,
-    product_original_price: null,
+    product_price: "₹25,999",
+    product_original_price: "₹35,999",
     currency: null,
     product_star_rating: "4",
     product_num_ratings: 23842,
@@ -2175,7 +2175,7 @@ export const allproducts = [
     product_photo:
       "https://m.media-amazon.com/images/I/81ZSn2rk9WL._AC_SX444_SY639_FMwebp_QL65_.jpg",
     product_num_offers: 1,
-    product_minimum_offer_price: null,
+    product_minimum_offer_price: "₹25,999",
     is_best_seller: false,
     is_amazon_choice: false,
     is_prime: true,
@@ -3157,8 +3157,8 @@ export const allproducts = [
   {
     asin: "B0CV4GYWRK",
     product_title: "Priyanka Jonas Fashion",
-    product_price: null,
-    product_original_price: null,
+    product_price: "₹129",
+    product_original_price: "₹300",
     currency: null,
     product_star_rating: null,
     product_num_ratings: 0,
@@ -3166,7 +3166,7 @@ export const allproducts = [
     product_photo:
       "https://m.media-amazon.com/images/I/91aO++3p-LL._AC_SR525,789_FMwebp_QL65_.jpg",
     product_num_offers: 1,
-    product_minimum_offer_price: null,
+    product_minimum_offer_price: "₹129",
     is_best_seller: false,
     is_amazon_choice: false,
     is_prime: false,
@@ -3306,8 +3306,8 @@ export const allproducts = [
     asin: "B0D132KRM5",
     product_title:
       "SQUIDSY 1:36 Scale Die-Cast Land Rover Defender SUV Car Toy Alloy Car Model Diecast Metal Toy Light and Music Vehicles Model Pull Back Car Toys Collection, Boy, Kids Gifts (Random Color)",
-    product_price: null,
-    product_original_price: null,
+    product_price: "₹289",
+    product_original_price: "₹389",
     currency: null,
     product_star_rating: "5",
     product_num_ratings: 2,
@@ -3315,7 +3315,7 @@ export const allproducts = [
     product_photo:
       "https://m.media-amazon.com/images/I/618KlL2vnIL._AC_SX444_SY639_FMwebp_QL65_.jpg",
     product_num_offers: 1,
-    product_minimum_offer_price: null,
+    product_minimum_offer_price: "₹289",
     is_best_seller: false,
     is_amazon_choice: false,
     is_prime: false,
@@ -5979,8 +5979,8 @@ export const productObject = {
     {
       asin: "B0CHWV2WYK",
       product_title: "Apple iPhone 15 Pro Max (256 GB) - Black Titanium",
-      product_price: null,
-      product_original_price: null,
+      product_price: "₹1,00,000",
+      product_original_price: "₹1,00,000",
       currency: null,
       product_star_rating: "4.5",
       product_num_ratings: 285,
@@ -5988,7 +5988,7 @@ export const productObject = {
       product_photo:
         "https://m.media-amazon.com/images/I/81Os1SDWpcL._AC_SX444_SY639_FMwebp_QL65_.jpg",
       product_num_offers: 1,
-      product_minimum_offer_price: null,
+      product_minimum_offer_price: "₹1,00,000",
       is_best_seller: false,
       is_amazon_choice: false,
       is_prime: false,
@@ -6186,8 +6186,8 @@ export const productObject = {
       asin: "B0BY8L3RZ6",
       product_title:
         "OnePlus Nord CE 3 Lite 5G (Chromatic Gray, 8GB RAM, 256GB Storage)",
-      product_price: null,
-      product_original_price: null,
+      product_price: "₹19,999",
+      product_original_price: "₹19,999",
       currency: null,
       product_star_rating: "4.2",
       product_num_ratings: 46330,
@@ -6195,7 +6195,7 @@ export const productObject = {
       product_photo:
         "https://m.media-amazon.com/images/I/61LB+d0vheL._AC_SX444_SY639_FMwebp_QL65_.jpg",
       product_num_offers: 1,
-      product_minimum_offer_price: null,
+      product_minimum_offer_price: "₹19,999",
       is_best_seller: false,
       is_amazon_choice: false,
       is_prime: false,
@@ -6726,8 +6726,8 @@ export const productObject = {
       asin: "B0BZCSMP95",
       product_title:
         "Samsung Galaxy M14 5G (ICY Silver,4GB,128GB)|50MP Triple Cam|Segment&#x27;s Only 6000 mAh 5G SP|5nm Processor|2 Gen. OS Upgrade &amp; 4 Year Security Update|8GB RAM with RAM Plus|Android 13|Without Charger",
-      product_price: null,
-      product_original_price: null,
+      product_price: "₹25,999",
+      product_original_price: "₹35,999",
       currency: null,
       product_star_rating: "4",
       product_num_ratings: 23842,
@@ -6735,7 +6735,7 @@ export const productObject = {
       product_photo:
         "https://m.media-amazon.com/images/I/81ZSn2rk9WL._AC_SX444_SY639_FMwebp_QL65_.jpg",
       product_num_offers: 1,
-      product_minimum_offer_price: null,
+      product_minimum_offer_price: "₹25,999",
       is_best_seller: false,
       is_amazon_choice: false,
       is_prime: true,
@@ -8016,8 +8016,8 @@ export const productObject = {
     {
       asin: "B0CV4GYWRK",
       product_title: "Priyanka Jonas Fashion",
-      product_price: null,
-      product_original_price: null,
+      product_price: "₹129",
+      product_original_price: "₹300",
       currency: null,
       product_star_rating: null,
       product_num_ratings: 0,
@@ -8025,7 +8025,7 @@ export const productObject = {
       product_photo:
         "https://m.media-amazon.com/images/I/91aO++3p-LL._AC_SR525,789_FMwebp_QL65_.jpg",
       product_num_offers: 1,
-      product_minimum_offer_price: null,
+      product_minimum_offer_price: "₹129",
       is_best_seller: false,
       is_amazon_choice: false,
       is_prime: false,
@@ -8166,8 +8166,8 @@ export const productObject = {
       asin: "B0D132KRM5",
       product_title:
         "SQUIDSY 1:36 Scale Die-Cast Land Rover Defender SUV Car Toy Alloy Car Model Diecast Metal Toy Light and Music Vehicles Model Pull Back Car Toys Collection, Boy, Kids Gifts (Random Color)",
-      product_price: null,
-      product_original_price: null,
+      product_price: "₹289",
+      product_original_price: "₹389",
       currency: null,
       product_star_rating: "5",
       product_num_ratings: 2,
@@ -8175,7 +8175,7 @@ export const productObject = {
       product_photo:
         "https://m.media-amazon.com/images/I/618KlL2vnIL._AC_SX444_SY639_FMwebp_QL65_.jpg",
       product_num_offers: 1,
-      product_minimum_offer_price: null,
+      product_minimum_offer_price: "₹289",
       is_best_seller: false,
       is_amazon_choice: false,
       is_prime: false,
@@ -11747,8 +11747,8 @@ export const phones = [
   {
     asin: "B0CHWV2WYK",
     product_title: "Apple iPhone 15 Pro Max (256 GB) - Black Titanium",
-    product_price: null,
-    product_original_price: null,
+    product_price: "₹1,00,000",
+    product_original_price: "₹1,00,000",
     currency: null,
     product_star_rating: "4.5",
     product_num_ratings: 285,
@@ -11756,7 +11756,7 @@ export const phones = [
     product_photo:
       "https://m.media-amazon.com/images/I/81Os1SDWpcL._AC_SX444_SY639_FMwebp_QL65_.jpg",
     product_num_offers: 1,
-    product_minimum_offer_price: null,
+    product_minimum_offer_price: "₹1,00,000",
     is_best_seller: false,
     is_amazon_choice: false,
     is_prime: false,
@@ -11953,8 +11953,8 @@ export const phones = [
     asin: "B0BY8L3RZ6",
     product_title:
       "OnePlus Nord CE 3 Lite 5G (Chromatic Gray, 8GB RAM, 256GB Storage)",
-    product_price: null,
-    product_original_price: null,
+    product_price: "₹19,999",
+    product_original_price: "₹19,999",
     currency: null,
     product_star_rating: "4.2",
     product_num_ratings: 46330,
@@ -11962,7 +11962,7 @@ export const phones = [
     product_photo:
       "https://m.media-amazon.com/images/I/61LB+d0vheL._AC_SX444_SY639_FMwebp_QL65_.jpg",
     product_num_offers: 1,
-    product_minimum_offer_price: null,
+    product_minimum_offer_price: "₹19,999",
     is_best_seller: false,
     is_amazon_choice: false,
     is_prime: false,
@@ -12513,8 +12513,8 @@ export const phones = [
     asin: "B0BZCSMP95",
     product_title:
       "Samsung Galaxy M14 5G (ICY Silver,4GB,128GB)|50MP Triple Cam|Segment&#x27;s Only 6000 mAh 5G SP|5nm Processor|2 Gen. OS Upgrade &amp; 4 Year Security Update|8GB RAM with RAM Plus|Android 13|Without Charger",
-    product_price: null,
-    product_original_price: null,
+    product_price: "₹25,999",
+    product_original_price: "₹35,999",
     currency: null,
     product_star_rating: "4",
     product_num_ratings: 23842,
@@ -12522,7 +12522,7 @@ export const phones = [
     product_photo:
       "https://m.media-amazon.com/images/I/81ZSn2rk9WL._AC_SX444_SY639_FMwebp_QL65_.jpg",
     product_num_offers: 1,
-    product_minimum_offer_price: null,
+    product_minimum_offer_price: "₹25,999",
     is_best_seller: false,
     is_amazon_choice: false,
     is_prime: true,
@@ -13807,8 +13807,8 @@ export const fashion = [
   {
     asin: "B0CV4GYWRK",
     product_title: "Priyanka Jonas Fashion",
-    product_price: null,
-    product_original_price: null,
+    product_price: "₹129",
+    product_original_price: "₹300",
     currency: null,
     product_star_rating: null,
     product_num_ratings: 0,
@@ -13816,7 +13816,7 @@ export const fashion = [
     product_photo:
       "https://m.media-amazon.com/images/I/91aO++3p-LL._AC_SR525,789_FMwebp_QL65_.jpg",
     product_num_offers: 1,
-    product_minimum_offer_price: null,
+    product_minimum_offer_price: "₹129",
     is_best_seller: false,
     is_amazon_choice: false,
     is_prime: false,
@@ -13958,8 +13958,8 @@ export const carandmotorbike = [
     asin: "B0D132KRM5",
     product_title:
       "SQUIDSY 1:36 Scale Die-Cast Land Rover Defender SUV Car Toy Alloy Car Model Diecast Metal Toy Light and Music Vehicles Model Pull Back Car Toys Collection, Boy, Kids Gifts (Random Color)",
-    product_price: null,
-    product_original_price: null,
+    product_price: "₹289",
+    product_original_price: "₹389",
     currency: null,
     product_star_rating: "5",
     product_num_ratings: 2,
@@ -13967,7 +13967,7 @@ export const carandmotorbike = [
     product_photo:
       "https://m.media-amazon.com/images/I/618KlL2vnIL._AC_SX444_SY639_FMwebp_QL65_.jpg",
     product_num_offers: 1,
-    product_minimum_offer_price: null,
+    product_minimum_offer_price: "₹289",
     is_best_seller: false,
     is_amazon_choice: false,
     is_prime: false,
