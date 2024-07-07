@@ -103,10 +103,10 @@ const Header = ({ name, setName, query, setQuery, setUseremail, call }) => {
         </Link>
 
         {/* Orders */}
-        <Link to="/" className="hidden xl:flex flex-col items-center">
+        {/* <Link to="/" className="hidden xl:flex flex-col items-center">
           <span className="text-xs">Returns</span>
           <span className="font-bold">Orders</span>
-        </Link>
+        </Link> */}
 
         {/* Cart */}
         <Link to="/cart" className="relative flex items-center">
@@ -137,13 +137,13 @@ const Header = ({ name, setName, query, setQuery, setUseremail, call }) => {
 
 const SearchBar = ({ query, setQuery, search, isMobile }) => (
   <div className={`flex items-center border-4 border-yellow-400 rounded-lg ${isMobile ? "w-full" : "hidden md:flex w-full lg:w-1/2 xl:w-1/2"} md:mx-2 mx-auto `}>
-    <select className="h-10 text-black bg-gray-100 px-2 w-20 sm:w-auto">
+    {/* <select className="h-10 text-black bg-gray-100 px-2 w-20 sm:w-auto">
       {amazonCategories.map((category, index) => (
         <option key={index} value={category.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-")}>
           {category}
         </option>
       ))}
-    </select>
+    </select> */}
     <input
       type="text"
       className="flex-grow h-10 px-2 text-black outline-none w-36 sm:w-full"
