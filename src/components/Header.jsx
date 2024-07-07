@@ -170,7 +170,6 @@ const SecondNav = () => (
       { label: "Car & Motorbike", link: "/product/carandmotorbike" },
       { label: "Today's Deal", link: "/product/todaysdeal" },
       { label: "Beauty Products", link: "/product/beautyproducts" },
-      { label: "Amazon Pharmacy", link: "/product/amazonpharmacy" },
       { label: "Grocery", link: "/product/groceryandgourmetfood" },
       { label: "Handmade", link: "/product/handmade" },
       { label: "Games", link: "/product/videogame" },
