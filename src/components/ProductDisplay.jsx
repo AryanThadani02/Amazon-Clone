@@ -66,6 +66,11 @@ function ProductDisplay() {
     <div className="px-4 md:px-10 lg:px-20">
       <Sidebar onSortChange={handleSortChange} />
       {sortedProducts?.length === 0 ? (
+         searchresult?.length === 0 ? (
+          <div className="text-center text-black text-2xl h-[50vh] flex justify-center items-center">
+            <p>No data available </p>
+          </div>
+        ) :
         <div className="text-center text-black text-2xl h-[50vh] flex justify-center items-center">
           <BallTriangle
             height={100}
